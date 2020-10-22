@@ -10,7 +10,9 @@ lint:
 	flake8 --ignore=F403,F405 .
 
 test:
-	sudo pytest test.py
+	# The "-p no:warnings" arg can be removed once
+	# https://github.com/iovisor/bcc/pull/3144 is merged
+	sudo pytest test.py -p no:warnings
 
 clean:
 	find . -name "*.py[cod]" -o -name "*__pycache__" | xargs rm -rf
