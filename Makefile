@@ -7,7 +7,7 @@ deps:
 	sudo pip install --upgrade -r requirements.txt
 
 lint:
-	flake8 --ignore=F403,F405 .
+	flake8 --max-line-length 100 --ignore=F403,F405 .
 
 test:
 	# The "-p no:warnings" arg can be removed once
