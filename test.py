@@ -5,6 +5,9 @@ from scapy.all import *
 
 class TestSuite(object):
 
+    xdp_retvals = {val: name for name, val in BPF.__dict__.items()
+                   if name.startswith("XDP_")}
+
     def compile_and_load(self, src_file, func_name):
         bpf = BPF(src_file=src_file)
         self.func = bpf.load_func(func_name, BPF.XDP)
@@ -26,7 +29,7 @@ class TestSuite(object):
                                            ctypes.byref(duration))
         assert ret == 0
 
-        assert retval.value == retval_expect
+        assert self.xdp_retvals[retval.value] == self.xdp_retvals[retval_expect]
         if data_out_expect:
             assert data_out[:size_out.value] == raw(data_out_expect)
 
