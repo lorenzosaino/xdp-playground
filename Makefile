@@ -14,3 +14,6 @@ test:
 
 clean:
 	find . -name "*.py[cod]" -o -name "*__pycache__" | xargs rm -rf
+
+%-vagrant:
+	vagrant ssh -c "cd /vagrant; make $*"
