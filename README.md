@@ -53,3 +53,4 @@ If you need additional Python packages for your tests, add them to [`requirement
 * [Cilium BPF and XDP Reference Guide](https://docs.cilium.io/en/latest/bpf/#bpf-guide)
 * [BPF features by Linux kernel version](https://github.com/iovisor/bcc/blob/master/docs/kernel-versions.md)
 * [XDP tutorial](https://github.com/xdp-project/xdp-tutorial)
+* [XDP Tools](https://github.com/xdp-project/xdp-tools)
