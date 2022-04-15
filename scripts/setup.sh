@@ -16,9 +16,7 @@ sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
 sudo apt-get install -qq bison build-essential cmake flex git libedit-dev zlib1g-dev libelf-dev
 
 # Install bcc from source (https://github.com/iovisor/bcc/blob/master/INSTALL.md#install-and-compile-bcc)
-# The following works as of commit 48946d2f31afbfb7b4bc7c62a9d3d6f1d2ffc330
-# Last stable release preceding that commit is v0.16.0
-# There are no deb packages built for Ubuntu 20.04 yet
+# There doesn't appear to be up-to-date deb packages built for Ubuntu 20.04
 git clone https://github.com/iovisor/bcc.git
 mkdir bcc/build
 cd bcc/build
