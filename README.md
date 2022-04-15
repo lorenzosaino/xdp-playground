@@ -47,9 +47,9 @@ If you need additional Python packages for your tests, add them to [`requirement
 
     make deps
 
-You may also run each of these targets in Vagrant from the host OS without SSH'ing into Vagrant by appending the `-vagrant` suffix to the command, e.g.:
+You may also run each of these targets in Vagrant from the host OS without SSH'ing into Vagrant by prepending the `vagrant-` prefix to the command, e.g.:
 
-    make test-vagrant
+    make vagrant-test
 
 These commands SSH into the Vagrant VM, move to the `/vagrant` directory and execute the specified target.
 
