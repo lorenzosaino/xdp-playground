@@ -1,0 +1,23 @@
+name: vagrant
+on:
+  push:
+  pull_request:
+  schedule:
+  - cron: 0 3 * * 6  # Every Saturday at 3:00 AM
+jobs:
+  vagrant:
+    runs-on: macos-10.15
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Cache Vagrant boxes
+      uses: actions/cache@v2
+      with:
+        path: ~/.vagrant.d/boxes
+        key: ${{ runner.os }}-vagrant-${{ hashFiles('Vagrantfile') }}
+        restore-keys: |
+          ${{ runner.os }}-vagrant-
+    - name: Run vagrant up
+      run: vagrant up
+    - name: Run tests
+      run: make test-vagrant
