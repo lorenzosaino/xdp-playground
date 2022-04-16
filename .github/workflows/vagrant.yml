@@ -22,4 +22,4 @@ jobs:
     - name: Run vagrant up
       run: vagrant up
     - name: Run tests
-      run: make vagrant-test
+      run: make test-vagrant
