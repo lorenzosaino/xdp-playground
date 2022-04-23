@@ -13,7 +13,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Cache Vagrant boxes
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: ~/.vagrant.d/boxes
         key: ${{ runner.os }}-vagrant-${{ hashFiles('Vagrantfile') }}
@@ -22,4 +22,4 @@ jobs:
     - name: Run vagrant up
       run: vagrant up
     - name: Run tests
-      run: make test-vagrant
+      run: make vagrant-test
